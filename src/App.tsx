@@ -1,9 +1,10 @@
 import React from 'react';
+import { useRef } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Main from './pages/Main/Main';
-import Portfolio from './pages/Portfolio/Portfolio';
-import Login from './pages/Login/Login';
+import Main from './pages/Main';
+import Portfolio from './pages/Portfolio';
+import Login from './pages/Login';
 
 function App() {
   return (
