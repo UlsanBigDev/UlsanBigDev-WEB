@@ -1,0 +1,67 @@
+.Memberlist {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Memberlist .Memberlist-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Memberlist .memberlist-container {
+  display: flex;
+
+  /* justify-content: center; */
+  align-items: center;
+  border: solid 1px #000;
+  width: 400px;
+  height: 600px;
+}
+
+.Memberlist .memberlist-wrapper {
+  display: flex;
+  margin: 0 20px 0 20px;
+  flex-direction: column;
+  /* padding: 20px 0 20px 0; */
+  width: 100%;
+  height: 100%;
+}
+
+.Memberlist .memberlist-header {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: solid 2px #000;
+  padding-bottom: 6px;
+}
+
+.Memberlist .memberlist-header .memberlist-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.Memberlist .memberlist-header .memberlist-add {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.Memberlist .memberlist-header .memberlist-add:active {
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.Memberlist .memberlist .member {
+  font-size: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.Memberlist .memberlist .member:active {
+  color: brown;
+}

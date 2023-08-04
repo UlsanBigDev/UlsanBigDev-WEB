@@ -1,0 +1,140 @@
+.Member {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Member .Member-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Member .member-portfolio-container {
+  display: flex;
+  border: solid 1px #000;
+  width: 1200px;
+  /* height: 600px; */
+  flex-direction: column;
+}
+
+.Member .member-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+.Member .member-portfolio-container .member-title {
+  font-size: 32px;
+  font-weight: bold;
+  border-bottom: solid 2px #000;
+}
+
+.Member .member-portfolio-container .portfolio-add {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.Member .member-portfolio-container .portfolio-add:active {
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.Member .member-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 40px 0 40px;
+  /* border: solid 1px #e9e9e9; */
+  padding-bottom: 40px;
+}
+
+.Member .member-body .portfolio-container {
+  display: flex;
+  border-radius: 10px;
+  background-color: #e9e9e9;
+  padding: 10px;
+  width: 280px;
+  max-height: 300px;
+  margin-right: 40px;
+  margin-top: 40px;
+}
+
+.Member .member-body .point {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+}
+
+.Member .member-body .portfolio-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.Member .member-body .portfolio-header {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+
+.Member .member-body .portfolio-header>div {
+  margin-right: 10px;
+}
+
+.Member .member-body .portfolio-title {
+  font-size: 32px;
+}
+
+.Member .member-body .contourline {
+  border-right: solid 2px #000;
+}
+
+.Member .member-body .portfolio-period {
+  display: flex;
+  flex-direction: column;
+  /* width: 120px; */
+  align-items: flex-end;
+}
+
+.Member .member-body .portfolio-members {
+  margin: 10px 0 10px 0;
+}
+
+.Member .member-body .portfolio-body {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.Member .member-body .portfolio-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.Member .member-body .check-btn {
+  color: #F1C0C0;
+  font-size: 30px;
+  cursor: pointer;
+  border: solid 1px #000;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.Member .member-body .x-btn {
+  color: #E1FFC9;
+  font-size: 30px;
+  cursor: pointer;
+  border: solid 1px #000;
+  border-radius: 50%;
+}
