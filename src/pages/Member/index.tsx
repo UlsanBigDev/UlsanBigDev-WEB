@@ -24,6 +24,7 @@ function Member() {
             <PortfolioCon />
             <PortfolioCon />
             <PortfolioCon />
+            <PortfolioCon />
           </div>
         </div>
       </div>
@@ -33,6 +34,7 @@ function Member() {
 export default Member
 
 function PortfolioCon() {
+  const meme = "wfeuhidjfkwjehfkwjhflwkhegloejlfi.jwaelf.ijawilejfweligj;wiejflewijflwiejflweijflw.iejflw.jfl.wijflkwajefl.ajkwl.egfjkwel.gjekljgwklejglw.jkfl.wjkflkwjf.ljkwfkljwfl;wjlf.jkw.lfjkwe.lfjkwl.efjkw.lfjkw.kefjl"
   return (
     <div className='portfolio-container'>
       <div className='point'></div>
@@ -48,7 +50,8 @@ function PortfolioCon() {
         <div className='portfolio-members'>Project by. {"김아무개, 박아무개"}</div>
         <div className='portfolio-body'>
           <div className='portfolio-content'>
-            {" 대충 김아무개와 박아무개의 90시간의 활기찬 여정을 테마로 한 프로젝트 설명인 척"}
+            {meme}
+            {/* {" 대충 김아무개와 박아무개의 90시간의 활기찬 여정을 테마로 한 프로젝트 설명인 척"} */}
           </div>
           <div className='portfolio-btn'>
             {/* <GoCheckCircle /> */}
