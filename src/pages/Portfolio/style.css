@@ -1,0 +1,132 @@
+.Portfolio {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Portfolio .Portfolio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Portfolio .portfolio-input-container {
+  display: flex;
+  border-radius: 10px;
+  background-color: #e9e9e9;
+  padding: 10px;
+  width: 400px;
+  max-height: 900px;
+  flex-direction: column;
+}
+
+.Portfolio .portfolio-input-container .point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.Portfolio .portfolio-input-container .portfolio-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.Portfolio .portfolio-input-container .portfolio-title {
+  outline: none;
+  border: solid 1px #fff;
+  border-radius: 10px;
+  width: 200px;
+  height: 35px;
+  /* background-color: t; */
+}
+
+.Portfolio .portfolio-input-container .portfolio-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Portfolio .portfolio-input-container .portfolio-title:focus {
+  border: solid 1px #000;
+}
+
+.Portfolio .portfolio-input-container .contourline {
+  border-right: solid 2px #000;
+}
+
+.Portfolio .portfolio-input-container .portfolio-period {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Portfolio .portfolio-input-container .portfolio-member-add {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Portfolio .portfolio-input-container .portfolio-members {
+  outline: none;
+  border: solid 1px #fff;
+  border-radius: 5px;
+  width: 200px;
+  height: 20px;
+  margin: 10px 0 10px 0;
+}
+
+.Portfolio .portfolio-input-container .portfolio-members:focus {
+  border: solid 1px #000;
+}
+
+.Portfolio .portfolio-input-container .add-btn {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Portfolio .portfolio-input-container .portfolio-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Portfolio .portfolio-input-container .portfolio-content {
+  outline: none;
+  border: solid 1px #fff;
+  border-radius: 5px;
+  width: 100%;
+  height: 200px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.Portfolio .portfolio-input-container .portfolio-content:focus {
+  border: solid 1px #000;
+}
+
+.Portfolio .portfolio-input-container .portfolio-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.Portfolio .portfolio-input-container .check-btn {
+  color: #000;
+  font-size: 30px;
+  cursor: pointer;
+  border: solid 1px #000;
+  border-radius: 50%;
+  margin-right: 4px;
+  background-color: #fff;
+
+}
