@@ -38,8 +38,9 @@
   outline: none;
   border: solid 1px #fff;
   border-radius: 10px;
-  width: 200px;
+  width: 250px;
   height: 35px;
+  padding-left: 10px;
   /* background-color: t; */
 }
 
@@ -73,10 +74,11 @@
 .Portfolio .portfolio-input-container .portfolio-members {
   outline: none;
   border: solid 1px #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 200px;
-  height: 20px;
+  /* height: 20px; */
   margin: 10px 0 10px 0;
+  padding: 10px 0 10px 5px;
 }
 
 .Portfolio .portfolio-input-container .portfolio-members:focus {
@@ -85,9 +87,9 @@
 
 .Portfolio .portfolio-input-container .add-btn {
   background-color: #fff;
-  width: 22px;
-  height: 22px;
-  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,11 +105,13 @@
 .Portfolio .portfolio-input-container .portfolio-content {
   outline: none;
   border: solid 1px #fff;
-  border-radius: 5px;
-  width: 100%;
+  border-radius: 10px;
+  width: calc(100%-10px);
   height: 200px;
   resize: none;
   margin-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .Portfolio .portfolio-input-container .portfolio-content:focus {
@@ -126,7 +130,6 @@
   cursor: pointer;
   border: solid 1px #000;
   border-radius: 50%;
-  margin-right: 4px;
   background-color: #fff;
 
 }
