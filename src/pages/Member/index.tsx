@@ -1,8 +1,9 @@
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import Header from '../../components/Header'
 import './style.css'
 import { GoPlus, GoCheckCircleFill, GoXCircleFill } from "react-icons/go"
 import { useEffect, useState } from 'react';
+import { portfolioForm, portfolio } from '../../interfaces';
 
 /**
  * 
@@ -10,9 +11,58 @@ import { useEffect, useState } from 'react';
  */
 function Member() {
   const { name } = useParams();
+  const navigate = useNavigate();
+  const [portfolio, setPortfolio] = useState<portfolioForm[]>([]);
+
+  useEffect(() => {
+    // fetch(`http://localhost:5050/portfolio`)
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     setPortfolio(
+    //       data.map((val: portfolio) => {
+    //         if (val.name === name) {
+    //           val.portfolioForm.map((value: portfolioForm) => {
+    //             console.log(value)
+    //             return {
+    //               title: value.title,
+    //               content: value.content,
+    //               startDate: value.startDate,
+    //               endDate: value.endDate,
+    //               headCount: value.headCount,
+    //               list: value.list
+    //             }
 
 
+    //           })
+    //         }
 
+    //       })
+    //     )
+    //   })
+    fetch(`http://localhost:5050/portfolio`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPortfolio(
+          data.reduce((accumulator: any, val: any) => {
+            if (val.name === name) {
+              const portfolioData = val.portfolioForm.map((value: any) => ({
+                title: value.title,
+                content: value.content,
+                startDate: value.startDate,
+                endDate: value.endDate,
+                headCount: value.headCount,
+                list: value.list,
+              }));
+              return [...accumulator, ...portfolioData];
+            }
+            return accumulator;
+          }, [])
+        );
+      });
+
+
+  }, [])
+  console.log(portfolio)
   return (
     <div className='Member'>
       <Header />
@@ -20,14 +70,18 @@ function Member() {
         <div className='member-portfolio-container'>
           <div className='member-header'>
             <div className='member-title'>{name}</div>
-            <GoPlus className='portfolio-add' />
+            <GoPlus className='portfolio-add' onClick={() => { navigate(`/portfolio/add/${name}`) }} />
           </div>
           <div className='member-body'>
+            {portfolio && portfolio.map((val: portfolioForm, idx: number) => {
+
+              return <PortfolioCon key={idx} {...val} />
+            })}
+
+            {/* <PortfolioCon />
             <PortfolioCon />
             <PortfolioCon />
-            <PortfolioCon />
-            <PortfolioCon />
-            <PortfolioCon />
+            <PortfolioCon /> */}
           </div>
         </div>
       </div>
@@ -39,25 +93,32 @@ function Member() {
 }
 export default Member
 
-function PortfolioCon() {
+function PortfolioCon(props: portfolioForm) {
   const meme = "wfeuhidjfkwjehfkwjhflwkhegloejlfi.jwaelf.ijawilejfweligj;wiejflewijflwiejflweijflw.iejflw.jfl.wijflkwajefl.ajkwl.egfjkwel.gjekljgwklejglw.jkfl.wjkflkwjf.ljkwfkljwfl;wjlf.jkw.lfjkwe.lfjkwl.efjkw.lfjkw.kefjl"
   return (
     <div className='portfolio-container'>
       <div className='point'></div>
       <div className='portfolio-wrapper'>
         <div className='portfolio-header'>
-          <div className='portfolio-title'>아무개꺼</div>
+          <div className='portfolio-title'>{props.title}</div>
           <div className='contourline'></div>
           <div className='portfolio-period'>
-            <div className='start-date'>{"2023-08-03"} ~</div>
-            <div className='end-date'>{"2023-08-20"}</div>
+            <div className='start-date'>{props.startDate} ~</div>
+            <div className='end-date'>{props.endDate}</div>
           </div>
         </div>
-        <div className='portfolio-members'>Project by. {"김아무개, 박아무개"}</div>
+        <div className='portfolio-members'>
+          Project by. {props.list.map((val: string, idx: number) => {
+            if (props.list.length === idx + 1) {
+              return <span>{val}</span>
+            }
+            else {
+              return <span>{`${val}, `}</span>
+            }
+          })}</div>
         <div className='portfolio-body'>
           <div className='portfolio-content'>
-            {meme}
-            {/* {" 대충 김아무개와 박아무개의 90시간의 활기찬 여정을 테마로 한 프로젝트 설명인 척"} */}
+            {props.content}
           </div>
           <div className='portfolio-btn'>
             {/* <GoCheckCircle /> */}

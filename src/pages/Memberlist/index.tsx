@@ -27,21 +27,6 @@ function Memberlist() {
 
           }))
 
-        setPortfolio(
-          data.map((val: portfolio) => {
-            val.portfolioForm.map((value: portfolioForm) => {
-              return {
-                title: value.title,
-                content: value.content,
-                startDate: value.startDate,
-                endDate: value.endDate,
-                headCount: value.headCount,
-                list: value.list
-              }
-            })
-          })
-        )
-
       })
   }, [])
   // console.log(portfolio)
