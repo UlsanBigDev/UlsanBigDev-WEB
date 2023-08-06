@@ -1,8 +1,8 @@
 interface portfolioForm {
   title: string,
   content: string,
-  startDate: string,
-  endDate: string,
+  startDate: Date,
+  endDate: Date,
   headCount: number,
   list: string[]
 }

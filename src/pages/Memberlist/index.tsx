@@ -16,20 +16,13 @@ function Memberlist() {
     fetch(`http://localhost:5050/portfolio`)
       .then(res => res.json())
       .then(data => {
-        // console.log(data)
-        // console.log(JSON.stringify(data))
-        // console.log(JSON.parse(JSON.stringify(data)).name)
-        // console.log(member)
         setMember(
           data.map((val: portfolio) => {
-            // console.log(val.name)
             return val.name
-
           }))
-
       })
   }, [])
-  // console.log(portfolio)
+
   return (
     <div className='Memberlist'>
       <Header />
@@ -44,7 +37,6 @@ function Memberlist() {
               <ul>
 
                 {member && member.map((name: any) => {
-                  // console.log(member)
                   return <li><div className='member' onClick={() => { navigate(`/portfolio/member/${name}`) }}>{name}</div></li>
                 })}
 

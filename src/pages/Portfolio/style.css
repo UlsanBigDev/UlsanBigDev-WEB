@@ -64,6 +64,30 @@
   align-items: flex-end;
 }
 
+.Portfolio .portfolio-input-container .portfolio-period-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.Portfolio .portfolio-input-container .start-date {
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  width: 85px;
+  font-size: 16px;
+
+}
+
+.Portfolio .portfolio-input-container .end-date {
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+  width: 85px;
+  font-size: 16px;
+}
+
 .Portfolio .portfolio-input-container .portfolio-member-add {
   display: flex;
   flex-direction: row;

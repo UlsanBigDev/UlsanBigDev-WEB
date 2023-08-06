@@ -77,11 +77,6 @@ function Member() {
 
               return <PortfolioCon key={idx} {...val} />
             })}
-
-            {/* <PortfolioCon />
-            <PortfolioCon />
-            <PortfolioCon />
-            <PortfolioCon /> */}
           </div>
         </div>
       </div>
@@ -94,7 +89,6 @@ function Member() {
 export default Member
 
 function PortfolioCon(props: portfolioForm) {
-  const meme = "wfeuhidjfkwjehfkwjhflwkhegloejlfi.jwaelf.ijawilejfweligj;wiejflewijflwiejflweijflw.iejflw.jfl.wijflkwajefl.ajkwl.egfjkwel.gjekljgwklejglw.jkfl.wjkflkwjf.ljkwfkljwfl;wjlf.jkw.lfjkwe.lfjkwl.efjkw.lfjkw.kefjl"
   return (
     <div className='portfolio-container'>
       <div className='point'></div>
@@ -103,8 +97,8 @@ function PortfolioCon(props: portfolioForm) {
           <div className='portfolio-title'>{props.title}</div>
           <div className='contourline'></div>
           <div className='portfolio-period'>
-            <div className='start-date'>{props.startDate} ~</div>
-            <div className='end-date'>{props.endDate}</div>
+            <div className='start-date'>{props.startDate.toString()} ~</div>
+            <div className='end-date'>{props.endDate.toString()}</div>
           </div>
         </div>
         <div className='portfolio-members'>
@@ -121,9 +115,7 @@ function PortfolioCon(props: portfolioForm) {
             {props.content}
           </div>
           <div className='portfolio-btn'>
-            {/* <GoCheckCircle /> */}
             <GoCheckCircleFill className='check-btn' />
-            {/* <GoXCircle /> */}
             <GoXCircleFill className='x-btn' />
           </div>
         </div>
