@@ -1,7 +1,8 @@
 import { useParams } from 'react-router'
 import Header from '../../components/Header'
 import './style.css'
-import { GoPlus, GoCheckCircle, GoCheckCircleFill, GoXCircle, GoXCircleFill } from "react-icons/go"
+import { GoPlus, GoCheckCircleFill, GoXCircleFill } from "react-icons/go"
+import { useEffect, useState } from 'react';
 
 /**
  * 
@@ -9,6 +10,8 @@ import { GoPlus, GoCheckCircle, GoCheckCircleFill, GoXCircle, GoXCircleFill } fr
  */
 function Member() {
   const { name } = useParams();
+
+
 
   return (
     <div className='Member'>
@@ -30,6 +33,9 @@ function Member() {
       </div>
     </div>
   )
+
+
+
 }
 export default Member
 
