@@ -128,7 +128,7 @@ function Portfolio() {
 
   function handleSubmit() {
 
-    fetch(`http://localhost:5050/portfolioAdd`, {
+    fetch(`http://localhost:5050/portfolioInsert`, {
       method: "post",
       body: JSON.stringify({
         name: name,

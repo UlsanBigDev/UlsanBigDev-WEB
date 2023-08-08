@@ -7,13 +7,13 @@ import { portfolio, portfolioForm } from '../../interfaces';
 
 function Memberlist() {
   const navigate = useNavigate();
-  // const memberlist = ["김아무개", "이아무개", "박아무개", "최아무개"];
   // const { name } = useParams();
   const [member, setMember] = useState<String[]>([]);
   const [portfolio, setPortfolio] = useState<portfolioForm[]>([]);
   const { name } = useParams<{ name: string }>();
   const [toggle, setToggle] = useState<boolean>(false)
   const [newMember, setNewMember] = useState<string>("")
+
   useEffect(() => {
     fetch(`http://localhost:5050/portfolio`)
       .then(res => res.json())
