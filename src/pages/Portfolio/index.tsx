@@ -7,6 +7,7 @@ import { portfolio } from '../../interfaces';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
+
 /**
  * 
  * @returns issues : 제목 폰트 수 제한, 크기 재 설정, 날짜picker api정하기, 
@@ -90,7 +91,7 @@ function Portfolio() {
                 return <ListComponent />
               })
             } */}
-
+            { }
 
             <div className='portfolio-body'>
               <textarea className='portfolio-content' value={inputContent} onChange={(e) => { setInputContent(e.target.value) }} />
@@ -108,6 +109,7 @@ function Portfolio() {
       </div>
     </div>
   )
+
 
   function ListComponent() {
     return (
