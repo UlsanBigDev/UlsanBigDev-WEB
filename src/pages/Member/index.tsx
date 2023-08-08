@@ -59,8 +59,6 @@ function Member() {
           }, [])
         );
       });
-
-
   }, [])
   console.log(portfolio)
   return (
