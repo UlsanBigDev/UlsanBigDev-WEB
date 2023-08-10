@@ -60,6 +60,25 @@ function Member() {
         );
       });
   }, [])
+  //   fetch(`http://localhost:5050/portfolio`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       const filteredPortfolio = data
+  //         .filter((val: any) => val.name === name)
+  //         .flatMap((val: any) =>
+  //           val.portfolioForm.map((value: any) => ({
+  //             title: value.title,
+  //             content: value.content,
+  //             startDate: value.startDate,
+  //             endDate: value.endDate,
+  //             headCount: value.headCount,
+  //             list: value.list,
+  //           }))
+  //         );
+  //       setPortfolio(filteredPortfolio);
+  //     });
+  // }, [])
+
   console.log(portfolio)
   return (
     <div className='Member'>

@@ -18,7 +18,7 @@ function Portfolio() {
   const [id, setID] = useState<number[]>([0]);
 
   const [member, setMember] = useState<string[]>([]);
-  const [addMember, setAddMember] = useState<string>(member[0]);
+  const [addMember, setAddMember] = useState<string>(member && member[0]);
   const [inputTitle, setInputTitle] = useState<string>();
   const [inputContent, setInputContent] = useState<string>();
   const [inputStartDate, setInputStartDate] = useState<Date>(new Date());
@@ -30,16 +30,68 @@ function Portfolio() {
 
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch(`http://localhost:5050/portfolio`);
+  //     const data = await response.json();
+  //     setMember(
+  //       data.map((val: portfolio) => {
+  //         return val.name;
+  //       })
+  //     );
+  //     console.log(`Member value after fetch: ${member}`);
+  //   };
+
+  //   fetchData();
+  // }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(`http://localhost:5050/portfolio`);
+  //       if (!response.ok) throw new Error('Network response was not ok');
+
+  //       const data = await response.json();
+  //       setMember(data.map((val: portfolio) => val.name));
+  //       console.log(`Member value after fetch: ${member}`);
+  //     } catch (error) {
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
   useEffect(() => {
-    fetch(`http://localhost:5050/portfolio`)
-      .then(res => res.json())
-      .then(data => {
-        setMember(
-          data.map((val: portfolio) => {
-            return val.name
-          }))
-      })
-  }, [])
+    async function fetchData() {
+      const response = await fetch(`http://localhost:5050/portfolio`);
+      const data = await response.json();
+
+      const memberNames = data.map((val: portfolio) => val.name);
+      setMember(memberNames);
+      setAddMember(memberNames[0]);
+
+      console.log("member", memberNames);
+      console.log("member[0]", memberNames[0]);
+      console.log("addMember", memberNames[0]); // Use memberNames[0] instead of addMember
+    }
+
+    fetchData();
+  }, []);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:5050/portfolio`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setMember(
+  //         data.map((val: portfolio) => {
+  //           return val.name
+  //         }))
+  //     })
+
+  //   console.log(`useeffect in ${member}`)
+  // }, [])
+
+  console.log(`useeffect => ${member}`)
   console.log(addMember, inputList)
   return (
     <div className='Portfolio'>
@@ -116,9 +168,12 @@ function Portfolio() {
       <div className='portfolio-member-add'>
         <select className='portfolio-members' value={addMember}
           placeholder='팀원 선택'
-          onChange={(e) => { setAddMember(e.target.value) }} >
+          onChange={(e) => { setAddMember(e.currentTarget.value) }} >
+          <option selected disabled>
+            팀원 선택
+          </option>
           {member.map((val, idx) => {
-            return <option key={idx}>{val}</option>
+            return <option value={val} key={idx}>{val}</option>
           })}
         </select>
         <div className='add-btn' onClick={() => { setInputList([...inputList, addMember]) }}>+</div>
@@ -147,10 +202,6 @@ function Portfolio() {
       .then(data => {
         console.log(data)
       })
-
-
-
-
   }
 }
 export default Portfolio

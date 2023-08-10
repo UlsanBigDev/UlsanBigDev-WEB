@@ -18,6 +18,7 @@ function Memberlist() {
     fetch(`http://localhost:5050/portfolio`)
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         setMember(
           data.map((val: portfolio) => {
             return val.name
