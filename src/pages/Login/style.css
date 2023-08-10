@@ -8,17 +8,19 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .Login .Login-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .Login .Login-form {
   width: 600px;
-  height: 400px;
+  height: 500px;
   border: solid 1px #000;
   display: flex;
   justify-content: center;
@@ -37,6 +39,7 @@
   flex-direction: row;
   align-items: center;
   /* position: relative; */
+
 }
 
 .Login .Login-input {
@@ -46,10 +49,12 @@
   width: 400px;
   height: 50px;
   padding-left: 32px;
+  /* margin-bottom: -1px; */
 }
 
 .Login .Login-input:focus {
   border: solid 1px #b9b9b9;
+  /* z-index: 2; */
 }
 
 .Login .Login-btn {
@@ -63,4 +68,27 @@
   justify-content: center;
   cursor: pointer;
   margin-top: 20px;
+}
+
+.Login .line-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.Login .line {
+  display: flex;
+  width: 40%;
+  border-bottom: solid 1px #b9b9b9;
+}
+
+.Login .line-or {
+  margin: 0 12px 0 12px;
+}
+
+.Login .not-member {
+  margin-top: 30px;
 }

@@ -1,24 +1,72 @@
 .Header {
   width: 100%;
   height: 70px;
-  background-color: #000;
+  background-color: rgb(45, 45, 45);
   position: sticky;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.Header .Header-left {
   display: flex;
   flex-direction: row;
 }
 
-.Header>div {
-  color: #fff;
-  width: 100px;
+.Header .Header-right {
+  display: flex;
+  flex-direction: row;
+}
+
+.Header .Header_main {
+  color: #e9e9e9;
+
   height: 100%;
-  border: solid 1px #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 30px;
 }
 
-.Header>div:active {
-  background-color: #d9d9d9;
+.Header .Header_portfolio {
+  color: #e9e9e9;
+
+  height: 100%;
+  /* border: solid 1px #d9d9d9; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.Header .Header_login {
   color: #000;
+  font-weight: bold;
+  font-size: 32px;
+  width: 70px;
+  height: 70px;
+  border: solid 5px rgb(45, 45, 45);
+  background-color: lightgray;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  position: absolute;
+  right: 35px;
+  top: 30px;
+}
+
+.Header>div>div:active {
+  /* background-color: #d9d9d9; */
+  color: #fff;
 }
