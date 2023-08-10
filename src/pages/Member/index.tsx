@@ -42,23 +42,31 @@ function Member() {
     fetch(`http://localhost:5050/portfolio`)
       .then((res) => res.json())
       .then((data) => {
-        setPortfolio(
-          data.reduce((accumulator: any, val: any) => {
-            if (val.name === name) {
-              const portfolioData = val.portfolioForm.map((value: any) => ({
-                title: value.title,
-                content: value.content,
-                startDate: value.startDate,
-                endDate: value.endDate,
-                headCount: value.headCount,
-                list: value.list,
-              }));
-              return [...accumulator, ...portfolioData];
-            }
-            return accumulator;
-          }, [])
-        );
+        try {
+          setPortfolio(
+            data.reduce((accumulator: any, val: any) => {
+              if (val.name === name) {
+                const portfolioData = val.portfolioForm.map((value: any) => ({
+                  title: value.title,
+                  content: value.content,
+                  startDate: value.startDate,
+                  endDate: value.endDate,
+                  headCount: value.headCount,
+                  list: value.list,
+                }));
+                return [...accumulator, ...portfolioData];
+              }
+              return accumulator;
+            }, [])
+          );
+        } catch (error) {
+          console.error("Error processing data:", error);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
+
   }, [])
   //   fetch(`http://localhost:5050/portfolio`)
   //     .then((res) => res.json())

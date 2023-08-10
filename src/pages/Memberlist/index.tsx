@@ -18,13 +18,17 @@ function Memberlist() {
     fetch(`http://localhost:5050/portfolio`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
-        setMember(
-          data.map((val: portfolio) => {
-            return val.name
-          }))
+        console.log(data);
+        const members = data.map((val: portfolio) => {
+          return val.name;
+        });
+        setMember(members);
       })
-  }, [member])
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      });
+  }, [member]);
+
 
   return (
     <div className='Memberlist'>
