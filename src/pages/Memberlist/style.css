@@ -44,10 +44,12 @@
 .Memberlist .memberlist-header .memberlist-title {
   font-size: 32px;
   font-weight: bold;
+  display: flex;
+  flex: 0 0 auto;
 }
 
 .Memberlist .memberlist-header .memberlist-add {
-  font-size: 28px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -60,10 +62,11 @@
   font-size: 20px;
   margin-bottom: 12px;
   cursor: pointer;
+  width: fit-content;
 }
 
 .Memberlist .memberlist .member:active {
-  color: brown;
+  color: indianred;
 }
 
 .AddMember {
@@ -103,8 +106,8 @@
   width: 100%;
   height: 60px;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .AddMember .title-wrapper {
@@ -127,27 +130,50 @@
 
 .AddMember .close {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
+  margin-bottom: 20px;
   width: 30px;
   height: 30px;
-  border: 1px solid var(--main-border-light);
-  border-radius: 25px;
+  font-size: 25px;
   cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.AddMember .close:active {
+  background-color: #d9d9d9;
+  border-radius: 50%;
 }
 
 .AddMember .modal-lower {
   display: flex;
-  margin-top: 15px;
+  margin-top: 20px;
   justify-content: center;
 }
 
-.AddMember .input-member {
+.AddMember .input-member-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.AddMember .input-member {
+  outline: none;
+  border: solid 1px #b9b9b9;
+  width: 150px;
+  height: 25px;
+  padding-left: 6px;
+  border-radius: 7px;
+}
+
+.AddMember .input-member:focus {
+  border: solid 1px gray;
 }
 
 .AddMember .addmember-btn {
   margin-left: 10px;
+  cursor: pointer;
+}
+
+.AddMember .addmember-btn:active {
+  color: indianred;
 }
