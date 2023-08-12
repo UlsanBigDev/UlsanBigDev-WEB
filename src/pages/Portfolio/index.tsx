@@ -3,7 +3,7 @@ import Header from '../../components/Header'
 import './style.css'
 import { GoCheckCircle } from "react-icons/go"
 import { useNavigate, useParams } from 'react-router-dom';
-import { portfolio } from '../../interfaces';
+import { portfolio, sort } from '../../interfaces';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -26,7 +26,7 @@ function Portfolio() {
   const [inputList, setInputList] = useState<string[]>([]);
 
   // const [portfolio, setPortfolio] = useState<portfolioForm[]>([]);
-  const { name } = useParams();
+  const { name, type } = useParams<{ name: string, type: sort }>();
 
   const navigate = useNavigate();
 

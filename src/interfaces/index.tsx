@@ -12,4 +12,6 @@ interface portfolio {
   portfolioForm: portfolioForm[]
 }
 
-export type { portfolioForm, portfolio }
+type sort = 'update' | 'add';
+
+export type { portfolioForm, portfolio, sort }

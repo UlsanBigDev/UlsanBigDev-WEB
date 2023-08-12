@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router';
 import Header from '../../components/Header'
 import './style.css'
-import { GoPlus } from "react-icons/go";
+import { GoPlus, GoX } from "react-icons/go";
 import { useEffect, useRef, useState } from 'react';
 import { portfolio, portfolioForm } from '../../interfaces';
 
@@ -87,13 +87,14 @@ function AddMember(props: any) {
       <div className='modal-body'>
         <div className='modal-header'>
           <div className='title-wrapper'>
-            <div className='title'>사람 추가</div>
+            <div className='title'>멤버 추가</div>
           </div>
-          <div className='close' onClick={() => { props.closeEvent() }}>X</div>
+          <GoX className='close' onClick={() => { props.closeEvent() }} />
+          {/* <div className='close' onClick={() => { props.closeEvent() }}>X</div> */}
         </div>
         <div className='modal-lower'>
-          <div className='input-member'>
-            <input type='text' value={newMember}
+          <div className='input-member-container'>
+            <input className='input-member' type='text' value={newMember}
               placeholder="이름을 입력하세요"
               onChange={(e) => { setNewMember(e.target.value) }}
               onKeyUp={(e) => {
@@ -103,8 +104,9 @@ function AddMember(props: any) {
               }}
               ref={inputRef}
             />
+            <div className='addmember-btn' onClick={() => { addMember() }}>추가</div>
           </div>
-          <div className='addmember-btn' onClick={() => { addMember() }}>저장</div>
+
         </div>
       </div>
     </div>
